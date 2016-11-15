@@ -1,0 +1,39 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    sthetoVersion           =   '1.3.1'
+    sthetoRealmVersion      =   '0.9.0'
+    androidSupportVersion   =   '25.0.1'
+    butterknifeVersion      =   '8.4.0'
+    retrofit2Version        =   '2.1.0'
+    timberVersion           =   '4.3.0'
+    picassoVersion          =   '2.5.2'
+
+    presentationDependencies = [
+            appCompatV7     :   "com.android.support:appcompat-v7:$androidSupportVersion",
+            cardviewV7      :   "com.android.support:cardview-v7:$androidSupportVersion",
+            recyclerviewV7  :   "com.android.support:recyclerview-v7:$androidSupportVersion",
+            supportV4       :   "com.android.support:support-v4:$androidSupportVersion",
+            stheto          :   "com.facebook.stetho:stetho:$sthetoVersion",
+            sthetoHttp      :   "com.facebook.stetho:stetho-okhttp3:$sthetoVersion",
+            butterknife     :   "com.jakewharton:butterknife:$butterknifeVersion",
+            butterknifeApt  :   "com.jakewharton:butterknife-compiler:$butterknifeVersion",
+            timber          :   "com.jakewharton.timber:timber:$timberVersion",
+            picasso         :   "com.squareup.picasso:picasso:$picassoVersion"
+    ]
+
+    dataDependencies = [
+            stheto          :   "com.facebook.stetho:stetho:$sthetoVersion",
+            sthetoHttp      :   "com.facebook.stetho:stetho-okhttp3:$sthetoVersion",
+            retrofit2       :   "com.squareup.retrofit2:retrofit:$retrofit2Version",
+            retrofit2Gson   :   "com.squareup.retrofit2:converter-gson:$retrofit2Version",
+            appCompatV7     :   "com.android.support:appcompat-v7:$androidSupportVersion",
+    ]
+
+    domainDependencies = [
+    ]
+}
