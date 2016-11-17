@@ -7,6 +7,7 @@ import com.facebook.stetho.Stetho;
 import jfuentesa.swapi_sample.di.component.ApplicationComponent;
 import jfuentesa.swapi_sample.di.component.DaggerApplicationComponent;
 import jfuentesa.swapi_sample.di.module.ApplicationModule;
+import jfuentesa.swapi_sample.di.module.NetModule;
 import timber.log.Timber;
 
 /**
@@ -39,9 +40,10 @@ public class SwapiApplication extends Application {
                 .build());
     }
 
-    private void initializeDagger(){
+    private void initializeDagger() {
         this.applicationComponent = DaggerApplicationComponent.builder()
-                              .applicationModule(new ApplicationModule(this)).build();
+                .applicationModule(new ApplicationModule(this))
+                .netModule(new NetModule()).build();
     }
 
     public ApplicationComponent getApplicationComponent(){

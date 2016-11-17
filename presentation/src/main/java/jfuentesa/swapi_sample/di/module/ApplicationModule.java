@@ -5,6 +5,7 @@ import android.content.Context;
 import com.jfuentes.swapi_sample.executor.JobExecutor;
 import com.jfuentes.swapi_sample.executor.PostThreadExecutor;
 import com.jfuentes.swapi_sample.executor.ThreadExecutor;
+import com.jfuentes.swapi_sample.net.RestApiService;
 import com.jfuentes.swapi_sample.repository.PeopleDataRepository;
 import com.jfuentes.swapi_sample.repository.PeopleRepository;
 
@@ -14,6 +15,7 @@ import dagger.Module;
 import dagger.Provides;
 import jfuentesa.swapi_sample.SwapiApplication;
 import jfuentesa.swapi_sample.UiThread;
+import retrofit2.Retrofit;
 
 /**
  * Created by jfuentesa on 15/11/2016.
