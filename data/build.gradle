@@ -26,6 +26,9 @@ dependencies {
     compile dataDependencies.retrofit2
     compile dataDependencies.retrofit2Gson
     compile dataDependencies.appCompatV7
+    compile dataDependencies.javaxAnnotation
+    compile dataDependencies.dagger
+    compile dataDependencies.daggerApt
 
     compile project(path: ':domain')
 }

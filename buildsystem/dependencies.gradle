@@ -12,6 +12,8 @@ ext {
     retrofit2Version        =   '2.1.0'
     timberVersion           =   '4.3.0'
     picassoVersion          =   '2.5.2'
+    daggerVersion           =   '2.0.2'
+    javaxAnnotationVersion  =   '1.0'
 
     presentationDependencies = [
             appCompatV7     :   "com.android.support:appcompat-v7:$androidSupportVersion",
@@ -23,7 +25,10 @@ ext {
             butterknife     :   "com.jakewharton:butterknife:$butterknifeVersion",
             butterknifeApt  :   "com.jakewharton:butterknife-compiler:$butterknifeVersion",
             timber          :   "com.jakewharton.timber:timber:$timberVersion",
-            picasso         :   "com.squareup.picasso:picasso:$picassoVersion"
+            picasso         :   "com.squareup.picasso:picasso:$picassoVersion",
+            dagger          :   "com.google.dagger:dagger:$daggerVersion",
+            daggerApt       :   "com.google.dagger:dagger-compiler:$daggerVersion",
+            javaxAnnotation :   "javax.annotation:jsr250-api:$javaxAnnotationVersion"
     ]
 
     dataDependencies = [
@@ -32,6 +37,9 @@ ext {
             retrofit2       :   "com.squareup.retrofit2:retrofit:$retrofit2Version",
             retrofit2Gson   :   "com.squareup.retrofit2:converter-gson:$retrofit2Version",
             appCompatV7     :   "com.android.support:appcompat-v7:$androidSupportVersion",
+            javaxAnnotation :   "javax.annotation:jsr250-api:$javaxAnnotationVersion",
+            dagger          :   "com.google.dagger:dagger:$daggerVersion",
+            daggerApt       :   "com.google.dagger:dagger-compiler:$daggerVersion"
     ]
 
     domainDependencies = [

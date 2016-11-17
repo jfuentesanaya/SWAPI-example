@@ -4,6 +4,9 @@ import android.app.Application;
 
 import com.facebook.stetho.Stetho;
 
+import jfuentesa.swapi_sample.di.component.ApplicationComponent;
+import jfuentesa.swapi_sample.di.component.DaggerApplicationComponent;
+import jfuentesa.swapi_sample.di.module.ApplicationModule;
 import timber.log.Timber;
 
 /**
@@ -12,10 +15,13 @@ import timber.log.Timber;
 
 public class SwapiApplication extends Application {
 
+    private ApplicationComponent applicationComponent;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
+        initializeDagger();
         initializeTimber();
         initializeStetho();
     }
@@ -31,5 +37,14 @@ public class SwapiApplication extends Application {
                 .enableDumpapp(Stetho.defaultDumperPluginsProvider(this))
                 .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(this))
                 .build());
+    }
+
+    private void initializeDagger(){
+        this.applicationComponent = DaggerApplicationComponent.builder()
+                              .applicationModule(new ApplicationModule(this)).build();
+    }
+
+    public ApplicationComponent getApplicationComponent(){
+        return applicationComponent;
     }
 }
