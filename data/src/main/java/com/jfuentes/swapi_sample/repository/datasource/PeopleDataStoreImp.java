@@ -14,7 +14,7 @@ import retrofit2.Response;
 
 public class PeopleDataStoreImp implements PeopleDataStore {
 
-    private static RestApiService restApiService;
+    private RestApiService restApiService;
 
     PeopleDataStoreImp(RestApiService restApiService) {
         this.restApiService = restApiService;
