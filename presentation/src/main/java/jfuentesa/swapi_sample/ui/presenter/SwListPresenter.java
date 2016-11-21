@@ -48,10 +48,13 @@ public class SwListPresenter implements PresenterBase {
         getPeopleListUseCase.execute(getPeopleListUseCaseCallback);
     }
 
+    public void onPeopleClicked(PeopleModel peopleModel) {
+        this.view.viewPeopleDetails(peopleModel);
+    }
+
     private void showPeopleCollectionInView(Collection<People> peopleCollection){
         Collection<PeopleModel> peopleModelCollection = this.peopleModelDataMapper.transform(peopleCollection);
         this.view.renderList(peopleModelCollection);
-
     }
 
     GetPeopleListUseCase.Callback getPeopleListUseCaseCallback =  new GetPeopleListUseCase.Callback() {

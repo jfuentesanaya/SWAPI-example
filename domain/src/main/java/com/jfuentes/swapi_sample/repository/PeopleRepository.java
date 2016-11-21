@@ -17,8 +17,9 @@ public interface PeopleRepository {
     }
 
     /**
+     * Get a collection of {@link People}.
      *
-     * @param peopleListRepositoryCallback
+     * @param peopleListRepositoryCallback A {@link PeopleListRepositoryCallback} used for notifying clients.
      */
     void getPeopleList(PeopleListRepositoryCallback peopleListRepositoryCallback);
 }

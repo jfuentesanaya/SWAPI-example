@@ -2,4 +2,9 @@
     <string name="app_name">Swapi-example</string>
     <string name="enter_app">Enter to app</string>
     <string name="default_name">Default name</string>
+    <string name="name">Name: </string>
+    <string name="height">Height: </string>
+    <string name="gender">Gender: </string>
+    <string name="films">Films: </string>
+
 </resources>

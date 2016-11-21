@@ -28,7 +28,7 @@ public class PeopleDataRepository implements PeopleRepository, PeopleDataStore.P
     public void getPeopleList(PeopleListRepositoryCallback peopleListRepositoryCallback) {
         this.peopleListRepositoryCallback = peopleListRepositoryCallback;
 
-        PeopleDataStore peopleDataStore = this.peopleStoreFactory.createCloudPostDataStore();
+        PeopleDataStore peopleDataStore = this.peopleStoreFactory.createCloudPeopleDataStore();
         peopleDataStore.getPeopleEntryList(this);
     }
 

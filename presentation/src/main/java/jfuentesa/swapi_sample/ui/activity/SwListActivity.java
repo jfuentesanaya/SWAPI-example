@@ -8,8 +8,10 @@ import jfuentesa.swapi_sample.R;
 import jfuentesa.swapi_sample.di.HasComponent;
 import jfuentesa.swapi_sample.di.component.DaggerSwComponent;
 import jfuentesa.swapi_sample.di.component.SwComponent;
+import jfuentesa.swapi_sample.model.PeopleModel;
+import jfuentesa.swapi_sample.ui.fragment.SwListFragment;
 
-public class SwListActivity extends BaseActivity implements HasComponent<SwComponent> {
+public class SwListActivity extends BaseActivity implements HasComponent<SwComponent>, SwListFragment.PeopleListListener {
 
     private SwComponent swComponent;
 
@@ -33,5 +35,10 @@ public class SwListActivity extends BaseActivity implements HasComponent<SwCompo
     @Override
     public SwComponent getComponent() {
         return this.swComponent;
+    }
+
+    @Override
+    public void onPeopleClicked(PeopleModel peopleModel) {
+        navigator.navigateToPeopleDetails(SwListActivity.this, peopleModel);
     }
 }

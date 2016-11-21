@@ -6,20 +6,20 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 /**
- * Created by jfuentesa on 17/11/2016.
+ * Created by jfuentesa on 21/11/2016.
  */
 
 @Singleton
-public class PeopleStoreFactory {
+public class FilmStoreFactory {
 
     private final RestApiService restApiService;
 
     @Inject
-    PeopleStoreFactory(RestApiService restApiService) {
+    public FilmStoreFactory(RestApiService restApiService) {
         this.restApiService = restApiService;
     }
 
-    public PeopleDataStore createCloudPeopleDataStore(){
-        return new PeopleDataStoreImp(restApiService);
+    public FilmDataStore createCloudFilmDataStore(){
+        return new FilmDataStoreImp(restApiService);
     }
 }

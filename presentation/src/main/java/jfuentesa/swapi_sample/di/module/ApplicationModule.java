@@ -6,6 +6,8 @@ import com.jfuentes.swapi_sample.executor.JobExecutor;
 import com.jfuentes.swapi_sample.executor.PostThreadExecutor;
 import com.jfuentes.swapi_sample.executor.ThreadExecutor;
 import com.jfuentes.swapi_sample.net.RestApiService;
+import com.jfuentes.swapi_sample.repository.FilmDataRepository;
+import com.jfuentes.swapi_sample.repository.FilmRepository;
 import com.jfuentes.swapi_sample.repository.PeopleDataRepository;
 import com.jfuentes.swapi_sample.repository.PeopleRepository;
 
@@ -52,5 +54,11 @@ public class ApplicationModule {
     @Singleton
     PeopleRepository providePeopleRepository(PeopleDataRepository peopleDataRepository){
         return peopleDataRepository;
+    }
+
+    @Provides
+    @Singleton
+    FilmRepository provideFilmRepository(FilmDataRepository filmDataRepository){
+        return filmDataRepository;
     }
 }

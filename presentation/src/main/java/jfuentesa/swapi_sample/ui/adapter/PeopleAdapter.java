@@ -47,7 +47,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleView
 
     @Override
     public void onBindViewHolder(PeopleViewHolder holder, int position) {
-        PeopleModel post = peopleList.get(position);
+        final PeopleModel post = peopleList.get(position);
         holder.bindPost(holder.itemView.getContext(), post);
     }
 
@@ -77,9 +77,17 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PeopleView
             ButterKnife.bind(this, itemView);
         }
 
-        private void bindPost(Context context, PeopleModel post) {
-            txtName.setText(post.getName());
-        }
+        private void bindPost(Context context, final PeopleModel peopleModel) {
+            txtName.setText(peopleModel.getName());
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(onItemClickListener != null){
+                        onItemClickListener.onPeopleItemClicked(peopleModel);
+                    }
+                }
+            });
+        }
     }
 }

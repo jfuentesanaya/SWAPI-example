@@ -1,5 +1,7 @@
 package jfuentesa.swapi_sample.di.module;
 
+import com.jfuentes.swapi_sample.interactor.GetFilmUseCase;
+import com.jfuentes.swapi_sample.interactor.GetFilmUseCaseImp;
 import com.jfuentes.swapi_sample.interactor.GetPeopleListUseCase;
 import com.jfuentes.swapi_sample.interactor.GetPeopleListUseCaseImp;
 
@@ -17,6 +19,11 @@ public class SwModule {
     @Provides @PerActivity
     GetPeopleListUseCase provideGetPeopleListUseCase (GetPeopleListUseCaseImp getPeopleListUseCaseImp){
         return getPeopleListUseCaseImp;
+    }
+
+    @Provides @PerActivity
+    GetFilmUseCase provideGetFilmUseCase (GetFilmUseCaseImp getFilmUseCaseImp){
+        return getFilmUseCaseImp;
     }
 
 }

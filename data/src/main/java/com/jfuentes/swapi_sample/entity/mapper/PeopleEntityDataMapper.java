@@ -51,6 +51,8 @@ public class PeopleEntityDataMapper {
             people = new People();
             people.setName(peopleEntity.getName());
             people.setHeight(peopleEntity.getHeight());
+            people.setGender(peopleEntity.getGender());
+            people.setFilmsUrl(peopleEntity.getFilmsUrls());
         }
         return people;
     }

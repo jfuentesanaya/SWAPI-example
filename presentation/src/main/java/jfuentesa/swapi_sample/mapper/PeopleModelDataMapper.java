@@ -41,6 +41,8 @@ public class PeopleModelDataMapper {
         PeopleModel peopleModel = new PeopleModel();
         peopleModel.setName(people.getName());
         peopleModel.setHeight(people.getHeight());
+        peopleModel.setGender(people.getGender());
+        peopleModel.setFilmsUrl(people.getFilmsUrl());
 
         return peopleModel;
     }

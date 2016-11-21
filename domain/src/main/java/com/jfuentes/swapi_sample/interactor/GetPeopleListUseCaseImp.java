@@ -47,7 +47,7 @@ public class GetPeopleListUseCaseImp implements GetPeopleListUseCase {
     private final PeopleRepository.PeopleListRepositoryCallback repositoryCallback = new PeopleRepository.PeopleListRepositoryCallback() {
         @Override
         public void onListLoaded(Collection<People> peopleCollection) {
-            notifyGetPeopleListSuccesfully(peopleCollection);
+            notifyGetPeopleListSuccessfully(peopleCollection);
         }
 
         @Override
@@ -56,7 +56,7 @@ public class GetPeopleListUseCaseImp implements GetPeopleListUseCase {
         }
     };
 
-    private void notifyGetPeopleListSuccesfully(final Collection<People> peopleCollection){
+    private void notifyGetPeopleListSuccessfully(final Collection<People> peopleCollection){
         this.postThreadExecutor.post(new Runnable() {
             @Override
             public void run() {

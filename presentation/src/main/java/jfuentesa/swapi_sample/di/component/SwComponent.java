@@ -4,6 +4,7 @@ import dagger.Component;
 import jfuentesa.swapi_sample.di.PerActivity;
 import jfuentesa.swapi_sample.di.module.ActivityModule;
 import jfuentesa.swapi_sample.di.module.SwModule;
+import jfuentesa.swapi_sample.ui.fragment.PeopleDetailsFragment;
 import jfuentesa.swapi_sample.ui.fragment.SwListFragment;
 
 /**
@@ -15,4 +16,5 @@ import jfuentesa.swapi_sample.ui.fragment.SwListFragment;
 public interface SwComponent extends ActivityComponent {
 
     void inject(SwListFragment swListFragment);
+//    void inject(PeopleDetailsFragment peopleDetailsFragment);
 }
