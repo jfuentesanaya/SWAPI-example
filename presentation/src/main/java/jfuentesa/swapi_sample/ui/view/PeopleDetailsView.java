@@ -7,4 +7,6 @@ package jfuentesa.swapi_sample.ui.view;
 public interface PeopleDetailsView extends LoadDataView  {
 
     void loadCharacterSelected();
+
+    void showFilms(String films);
 }

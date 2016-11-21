@@ -16,5 +16,5 @@ import jfuentesa.swapi_sample.ui.fragment.SwListFragment;
 public interface SwComponent extends ActivityComponent {
 
     void inject(SwListFragment swListFragment);
-//    void inject(PeopleDetailsFragment peopleDetailsFragment);
+    void inject(PeopleDetailsFragment peopleDetailsFragment);
 }

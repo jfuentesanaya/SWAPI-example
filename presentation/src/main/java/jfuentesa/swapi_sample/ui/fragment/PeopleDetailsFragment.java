@@ -73,11 +73,11 @@ public class PeopleDetailsFragment extends BaseFragment implements PeopleDetails
         super.onActivityCreated(savedInstanceState);
         initialize();
         loadCharacterSelected();
-        peopleDetailsPresenter.loadFilms();
+        peopleDetailsPresenter.loadFilms(peopleModel.getFilmsUrl());
     }
 
     private void initialize() {
-//        this.getComponent(SwComponent.class).inject(this);
+        this.getComponent(SwComponent.class).inject(this);
         this.peopleDetailsPresenter.setView(this);
     }
 
@@ -86,6 +86,11 @@ public class PeopleDetailsFragment extends BaseFragment implements PeopleDetails
         txtName.setText(peopleModel.getName());
         txtHeight.setText(peopleModel.getHeight());
         txtGender.setText(peopleModel.getGender());
+    }
+
+    @Override
+    public void showFilms(String films) {
+        txtFilms.setText(films);
     }
 
     @Override

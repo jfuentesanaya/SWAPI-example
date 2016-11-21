@@ -3,6 +3,7 @@ package jfuentesa.swapi_sample.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ public class PeopleModel implements Parcelable{
     private String name;
     private String height;
     private String gender;
-    private List<String> filmsUrl;
+    private List<String> filmsUrl = new ArrayList<>();
 
     public PeopleModel() { }
 
@@ -22,7 +23,7 @@ public class PeopleModel implements Parcelable{
         setName(in.readString());
         setHeight(in.readString());
         setGender(in.readString());
-//        setFilmsUrl(in.readStringList(getFilmsUrl()));
+        in.readStringList(filmsUrl);
     }
 
     public static final Creator<PeopleModel> CREATOR = new Creator<PeopleModel>() {

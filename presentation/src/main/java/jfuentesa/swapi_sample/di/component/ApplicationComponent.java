@@ -5,6 +5,7 @@ import android.content.Context;
 import com.jfuentes.swapi_sample.executor.PostThreadExecutor;
 import com.jfuentes.swapi_sample.executor.ThreadExecutor;
 import com.jfuentes.swapi_sample.net.RestApiService;
+import com.jfuentes.swapi_sample.repository.FilmRepository;
 import com.jfuentes.swapi_sample.repository.PeopleRepository;
 
 import javax.inject.Singleton;
@@ -30,6 +31,7 @@ public interface ApplicationComponent {
     ThreadExecutor threadExecutor();
     PostThreadExecutor postThreadExecutor();
     PeopleRepository peopleRepository();
+    FilmRepository filmRepository();
     Retrofit retrofit();
     RestApiService restServiceApi();
 }
