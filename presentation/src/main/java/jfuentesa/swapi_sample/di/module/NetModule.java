@@ -20,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class NetModule {
 
-    private static String BASE_URL = "http://swapi.co/api/";
+    private static final String BASE_URL = "http://swapi.co/api/";
 
     public NetModule() { }
 

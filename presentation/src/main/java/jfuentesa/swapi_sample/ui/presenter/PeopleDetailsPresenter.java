@@ -71,6 +71,7 @@ public class PeopleDetailsPresenter implements PresenterBase {
             for(String title : titleFilms){
                 filmsToShow += (title+"\n");
             }
+            detailsView.hideLoading();
             this.detailsView.showFilms(filmsToShow);
         }
     }
@@ -79,7 +80,6 @@ public class PeopleDetailsPresenter implements PresenterBase {
         @Override
         public void onFilmLoaded(Film film) {
             showFilmInView(film);
-            detailsView.hideLoading();
         }
 
         @Override

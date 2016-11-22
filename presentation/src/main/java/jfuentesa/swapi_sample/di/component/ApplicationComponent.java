@@ -32,6 +32,4 @@ public interface ApplicationComponent {
     PostThreadExecutor postThreadExecutor();
     PeopleRepository peopleRepository();
     FilmRepository filmRepository();
-    Retrofit retrofit();
-    RestApiService restServiceApi();
 }
