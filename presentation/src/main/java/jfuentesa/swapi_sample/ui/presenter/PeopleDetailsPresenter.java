@@ -5,13 +5,14 @@ import android.support.annotation.NonNull;
 
 import com.jfuentes.swapi_sample.Film;
 import com.jfuentes.swapi_sample.exception.ErrorBundle;
-import com.jfuentes.swapi_sample.interactor.FilmUseCaseFactory;
 import com.jfuentes.swapi_sample.interactor.GetFilmUseCase;
+import com.jfuentes.swapi_sample.interactor.GetFilmUseCaseImp;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Provider;
 
 import jfuentesa.swapi_sample.di.PerActivity;
 import jfuentesa.swapi_sample.mapper.FilmModelDataMapper;
@@ -25,14 +26,15 @@ import jfuentesa.swapi_sample.ui.view.PeopleDetailsView;
 public class PeopleDetailsPresenter implements PresenterBase {
 
     private PeopleDetailsView detailsView;
-    private FilmUseCaseFactory filmUseCaseFactory;
     private FilmModelDataMapper filmModelDataMapper;
     private List<String> filmsUrl;
     private List<String> titleFilms = new ArrayList<>();
+    //Provider executes Factory method for execute different instances
+    private Provider<GetFilmUseCaseImp> getFilmUseCaseImpProvider;
 
     @Inject
-    PeopleDetailsPresenter(FilmUseCaseFactory filmUseCaseFactory, FilmModelDataMapper filmModelDataMapper) {
-        this.filmUseCaseFactory = filmUseCaseFactory;
+    PeopleDetailsPresenter(FilmModelDataMapper filmModelDataMapper, Provider<GetFilmUseCaseImp> getFilmUseCaseImpProvider) {
+        this.getFilmUseCaseImpProvider = getFilmUseCaseImpProvider;
         this.filmModelDataMapper = filmModelDataMapper;
     }
 
@@ -57,7 +59,7 @@ public class PeopleDetailsPresenter implements PresenterBase {
         for(String filmUrl : filmsUrl){
             Uri uri = Uri.parse(filmUrl);
             String filmId = uri.getLastPathSegment();
-            filmUseCaseFactory.getNewFilmUseCase().execute(filmId, getFilmUseCaseCallback);
+            getFilmUseCaseImpProvider.get().execute(filmId, getFilmUseCaseCallback  );
         }
     }
 
